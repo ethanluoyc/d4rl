@@ -22,33 +22,12 @@ except ImportError as e:
         print(e, file=sys.stderr)
 
 try:
-    import d4rl.flow
-except ImportError as e:
-    if not SUPPRESS_MESSAGES:
-        print(_ERROR_MESSAGE % 'Flow', file=sys.stderr)
-        print(e, file=sys.stderr)
-
-try:
     import d4rl.kitchen
 except ImportError as e:
     if not SUPPRESS_MESSAGES:
         print(_ERROR_MESSAGE % 'FrankaKitchen', file=sys.stderr)
         print(e, file=sys.stderr)
 
-try:
-    import d4rl.carla
-except ImportError as e:
-    if not SUPPRESS_MESSAGES:
-        print(_ERROR_MESSAGE % 'CARLA', file=sys.stderr)
-        print(e, file=sys.stderr)
-
-try:
-    import d4rl.gym_bullet
-    import d4rl.pointmaze_bullet
-except ImportError as e:
-    if not SUPPRESS_MESSAGES:
-        print(_ERROR_MESSAGE % 'GymBullet', file=sys.stderr)
-        print(e, file=sys.stderr)
 
 def reverse_normalized_score(env_name, score):
     ref_min_score = d4rl.infos.REF_MIN_SCORE[env_name]
