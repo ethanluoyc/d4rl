@@ -1,5 +1,5 @@
 from gym.envs.registration import register
-from d4rl.gym_mujoco import gym_envs
+# from d4rl.gym_mujoco import gym_envs
 from d4rl import infos
 
 # V1 envs

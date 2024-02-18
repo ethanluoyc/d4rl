@@ -1,10 +1,9 @@
-from .kitchen_envs import KitchenMicrowaveKettleLightSliderV0, KitchenMicrowaveKettleBottomBurnerLightV0
 from gym.envs.registration import register
 
 # Smaller dataset with only positive demonstrations.
 register(
     id='kitchen-complete-v0',
-    entry_point='d4rl.kitchen:KitchenMicrowaveKettleLightSliderV0',
+    entry_point='d4rl.kitchen.kitchen_envs:KitchenMicrowaveKettleLightSliderV0',
     max_episode_steps=280,
     kwargs={
         'ref_min_score': 0.0,
@@ -17,7 +16,7 @@ register(
 # solve the task.
 register(
     id='kitchen-partial-v0',
-    entry_point='d4rl.kitchen:KitchenMicrowaveKettleLightSliderV0',
+    entry_point='d4rl.kitchen.kitchen_envs:KitchenMicrowaveKettleLightSliderV0',
     max_episode_steps=280,
     kwargs={
         'ref_min_score': 0.0,
@@ -31,7 +30,7 @@ register(
 # components of the task.
 register(
     id='kitchen-mixed-v0',
-    entry_point='d4rl.kitchen:KitchenMicrowaveKettleBottomBurnerLightV0',
+    entry_point='d4rl.kitchen.kitchen_envs:KitchenMicrowaveKettleBottomBurnerLightV0',
     max_episode_steps=280,
     kwargs={
         'ref_min_score': 0.0,
