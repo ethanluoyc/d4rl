@@ -3,8 +3,8 @@ from gym.envs.mujoco import mujoco_env
 from gym import utils
 from d4rl import offline_env
 from d4rl.pointmaze.dynamic_mjc import MJCModel
+from d4rl.pointmaze.mazes import U_MAZE
 import numpy as np
-import random
 
 
 WALL = 10
@@ -82,75 +82,6 @@ def point_maze(maze_str):
     return mjcmodel
 
 
-LARGE_MAZE = \
-        "############\\"+\
-        "#OOOO#OOOOO#\\"+\
-        "#O##O#O#O#O#\\"+\
-        "#OOOOOO#OOO#\\"+\
-        "#O####O###O#\\"+\
-        "#OO#O#OOOOO#\\"+\
-        "##O#O#O#O###\\"+\
-        "#OO#OOO#OGO#\\"+\
-        "############"
-
-LARGE_MAZE_EVAL = \
-        "############\\"+\
-        "#OO#OOO#OGO#\\"+\
-        "##O###O#O#O#\\"+\
-        "#OO#O#OOOOO#\\"+\
-        "#O##O#OO##O#\\"+\
-        "#OOOOOO#OOO#\\"+\
-        "#O##O#O#O###\\"+\
-        "#OOOO#OOOOO#\\"+\
-        "############"
-
-MEDIUM_MAZE = \
-        '########\\'+\
-        '#OO##OO#\\'+\
-        '#OO#OOO#\\'+\
-        '##OOO###\\'+\
-        '#OO#OOO#\\'+\
-        '#O#OO#O#\\'+\
-        '#OOO#OG#\\'+\
-        "########"
-
-MEDIUM_MAZE_EVAL = \
-        '########\\'+\
-        '#OOOOOG#\\'+\
-        '#O#O##O#\\'+\
-        '#OOOO#O#\\'+\
-        '###OO###\\'+\
-        '#OOOOOO#\\'+\
-        '#OO##OO#\\'+\
-        "########"
-
-SMALL_MAZE = \
-        "######\\"+\
-        "#OOOO#\\"+\
-        "#O##O#\\"+\
-        "#OOOO#\\"+\
-        "######"
-
-U_MAZE = \
-        "#####\\"+\
-        "#GOO#\\"+\
-        "###O#\\"+\
-        "#OOO#\\"+\
-        "#####"
-
-U_MAZE_EVAL = \
-        "#####\\"+\
-        "#OOG#\\"+\
-        "#O###\\"+\
-        "#OOO#\\"+\
-        "#####"
-
-OPEN = \
-        "#######\\"+\
-        "#OOOOO#\\"+\
-        "#OOGOO#\\"+\
-        "#OOOOO#\\"+\
-        "#######"
 
 
 class MazeEnv(mujoco_env.MujocoEnv, utils.EzPickle, offline_env.OfflineEnv):

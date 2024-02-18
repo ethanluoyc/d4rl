@@ -1,9 +1,9 @@
-from .maze_model import MazeEnv, OPEN, U_MAZE, MEDIUM_MAZE, LARGE_MAZE, U_MAZE_EVAL, MEDIUM_MAZE_EVAL, LARGE_MAZE_EVAL
+from .mazes import OPEN, U_MAZE, MEDIUM_MAZE, LARGE_MAZE, U_MAZE_EVAL, MEDIUM_MAZE_EVAL, LARGE_MAZE_EVAL
 from gym.envs.registration import register
 
 register(
     id='maze2d-open-v0',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=150,
     kwargs={
         'maze_spec':OPEN,
@@ -17,7 +17,7 @@ register(
 
 register(
     id='maze2d-umaze-v0',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=150,
     kwargs={
         'maze_spec':U_MAZE,
@@ -31,7 +31,7 @@ register(
 
 register(
     id='maze2d-medium-v0',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=250,
     kwargs={
         'maze_spec':MEDIUM_MAZE,
@@ -46,7 +46,7 @@ register(
 
 register(
     id='maze2d-large-v0',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=600,
     kwargs={
         'maze_spec':LARGE_MAZE,
@@ -61,7 +61,7 @@ register(
 
 register(
     id='maze2d-umaze-v1',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=300,
     kwargs={
         'maze_spec':U_MAZE,
@@ -75,7 +75,7 @@ register(
 
 register(
     id='maze2d-medium-v1',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=600,
     kwargs={
         'maze_spec':MEDIUM_MAZE,
@@ -90,7 +90,7 @@ register(
 
 register(
     id='maze2d-large-v1',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=800,
     kwargs={
         'maze_spec':LARGE_MAZE,
@@ -104,7 +104,7 @@ register(
 
 register(
     id='maze2d-eval-umaze-v1',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=300,
     kwargs={
         'maze_spec':U_MAZE_EVAL,
@@ -118,7 +118,7 @@ register(
 
 register(
     id='maze2d-eval-medium-v1',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=600,
     kwargs={
         'maze_spec':MEDIUM_MAZE_EVAL,
@@ -133,7 +133,7 @@ register(
 
 register(
     id='maze2d-eval-large-v1',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=800,
     kwargs={
         'maze_spec':LARGE_MAZE_EVAL,
@@ -148,7 +148,7 @@ register(
 
 register(
     id='maze2d-open-dense-v0',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=150,
     kwargs={
         'maze_spec':OPEN,
@@ -162,7 +162,7 @@ register(
 
 register(
     id='maze2d-umaze-dense-v0',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=150,
     kwargs={
         'maze_spec':U_MAZE,
@@ -176,7 +176,7 @@ register(
 
 register(
     id='maze2d-medium-dense-v0',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=250,
     kwargs={
         'maze_spec':MEDIUM_MAZE,
@@ -191,7 +191,7 @@ register(
 
 register(
     id='maze2d-large-dense-v0',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=600,
     kwargs={
         'maze_spec':LARGE_MAZE,
@@ -205,7 +205,7 @@ register(
 
 register(
     id='maze2d-umaze-dense-v1',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=300,
     kwargs={
         'maze_spec':U_MAZE,
@@ -219,7 +219,7 @@ register(
 
 register(
     id='maze2d-medium-dense-v1',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=600,
     kwargs={
         'maze_spec':MEDIUM_MAZE,
@@ -234,7 +234,7 @@ register(
 
 register(
     id='maze2d-large-dense-v1',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=800,
     kwargs={
         'maze_spec':LARGE_MAZE,
@@ -248,7 +248,7 @@ register(
 
 register(
     id='maze2d-eval-umaze-dense-v1',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=300,
     kwargs={
         'maze_spec':U_MAZE_EVAL,
@@ -262,7 +262,7 @@ register(
 
 register(
     id='maze2d-eval-medium-dense-v1',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=600,
     kwargs={
         'maze_spec':MEDIUM_MAZE_EVAL,
@@ -277,7 +277,7 @@ register(
 
 register(
     id='maze2d-eval-large-dense-v1',
-    entry_point='d4rl.pointmaze:MazeEnv',
+    entry_point='d4rl.pointmaze.maze_model:MazeEnv',
     max_episode_steps=800,
     kwargs={
         'maze_spec':LARGE_MAZE_EVAL,
