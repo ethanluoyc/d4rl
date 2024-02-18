@@ -49,8 +49,7 @@ class Robot(base_robot.BaseRobot):
 
         # Robot: Handware
         if self.is_hardware:
-
-            if franka_interface is '':
+            if franka_interface == '':
                 raise NotImplementedError()
                 from handware.franka import franka
 
@@ -89,15 +88,15 @@ class Robot(base_robot.BaseRobot):
 
         print("Reading configurations for %s" % self.robot_name)
         for i in range(self.n_dofs):
-            self.robot_mode[i] = read_config_from_node(root, "qpos"+str(i), "mode", int)
-            self.robot_mj_dof[i] = read_config_from_node(root, "qpos"+str(i), "mj_dof", int)
-            self.robot_hardware_dof[i] = read_config_from_node(root, "qpos"+str(i), "hardware_dof", int)
-            self.robot_scale[i] = read_config_from_node(root, "qpos"+str(i), "scale", float)
-            self.robot_offset[i] = read_config_from_node(root, "qpos"+str(i), "offset", float)
+            self.robot_mode[i] = read_config_from_node(root, "qpos"+str(i), "mode", int).item()
+            self.robot_mj_dof[i] = read_config_from_node(root, "qpos"+str(i), "mj_dof", int).item()
+            self.robot_hardware_dof[i] = read_config_from_node(root, "qpos"+str(i), "hardware_dof", int).item()
+            self.robot_scale[i] = read_config_from_node(root, "qpos"+str(i), "scale", float).item()
+            self.robot_offset[i] = read_config_from_node(root, "qpos"+str(i), "offset", float).item()
             self.robot_pos_bound[i] = read_config_from_node(root, "qpos"+str(i), "pos_bound", float)
             self.robot_vel_bound[i] = read_config_from_node(root, "qpos"+str(i), "vel_bound", float)
-            self.robot_pos_noise_amp[i] = read_config_from_node(root, "qpos"+str(i), "pos_noise_amp", float)
-            self.robot_vel_noise_amp[i] = read_config_from_node(root, "qpos"+str(i), "vel_noise_amp", float)
+            self.robot_pos_noise_amp[i] = read_config_from_node(root, "qpos"+str(i), "pos_noise_amp", float).item()
+            self.robot_vel_noise_amp[i] = read_config_from_node(root, "qpos"+str(i), "vel_noise_amp", float).item()
 
 
     # convert to hardware space

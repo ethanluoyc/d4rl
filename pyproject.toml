@@ -52,3 +52,13 @@ d4rl = [
     "hand_manipulation_suite/Adroit/resources/meshes/*",
     "hand_manipulation_suite/Adroit/resources/textures/*",
 ]
+
+# pyproject.toml
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = [
+    "tests",
+]
+filterwarnings = [
+    "ignore::UserWarning",
+]
