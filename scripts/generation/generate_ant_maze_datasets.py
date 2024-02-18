@@ -127,7 +127,7 @@ def main():
         act, waypoint_goal = data_collection_policy(s)
 
         if args.noisy:
-            act = act + np.random.randn(*act.shape)*0.2
+            act = act + np.random.standard_normal(act.shape)*0.2
             act = np.clip(act, -1.0, 1.0)
 
         ns, r, done, info = env.step(act)

@@ -120,7 +120,7 @@ class AntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
   def reset_model(self):
     qpos = self.init_qpos + self.np_random.uniform(
         size=self.model.nq, low=-.1, high=.1)
-    qvel = self.init_qvel + self.np_random.randn(self.model.nv) * .1
+    qvel = self.init_qvel + self.np_random.standard_normal(self.model.nv) * .1
 
     if self._non_zero_reset:
       """Now the reset is supposed to be to a non-zero location"""

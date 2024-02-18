@@ -64,7 +64,7 @@ def main():
         velocity = s[2:4]
         act, done = controller.get_action(position, velocity, env._target)
         if args.noisy:
-            act = act + np.random.randn(*act.shape)*0.5
+            act = act + np.random.standard_normal(act.shape)*0.5
 
         act = np.clip(act, -1.0, 1.0)
         if ts >= max_episode_steps:

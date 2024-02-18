@@ -157,7 +157,7 @@ class MazeEnv(mujoco_env.MujocoEnv, utils.EzPickle, offline_env.OfflineEnv):
         idx = self.np_random.choice(len(self.empty_and_goal_locations))
         reset_location = np.array(self.empty_and_goal_locations[idx]).astype(self.observation_space.dtype)
         qpos = reset_location + self.np_random.uniform(low=-.1, high=.1, size=self.model.nq)
-        qvel = self.init_qvel + self.np_random.randn(self.model.nv) * .1
+        qvel = self.init_qvel + self.np_random.standard_normal(self.model.nv) * .1
         self.set_state(qpos, qvel)
         if self.reset_target:
             self.set_target()
@@ -167,7 +167,7 @@ class MazeEnv(mujoco_env.MujocoEnv, utils.EzPickle, offline_env.OfflineEnv):
         self.sim.reset()
         reset_location = np.array(location).astype(self.observation_space.dtype)
         qpos = reset_location + self.np_random.uniform(low=-.1, high=.1, size=self.model.nq)
-        qvel = self.init_qvel + self.np_random.randn(self.model.nv) * .1
+        qvel = self.init_qvel + self.np_random.standard_normal(self.model.nv) * .1
         self.set_state(qpos, qvel)
         return self._get_obs()
 

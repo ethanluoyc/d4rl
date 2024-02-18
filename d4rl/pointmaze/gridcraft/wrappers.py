@@ -108,7 +108,7 @@ class RandomObsWrapper(GridObsWrapper):
         super(RandomObsWrapper, self).__init__(env)
         self.gs = env.gs
         self.dO = dO
-        self.obs_matrix = np.random.randn(self.dO, len(self.gs))
+        self.obs_matrix = np.random.standard_normal((self.dO, len(self.gs)))
         self.__observation_space = Box(np.min(self.obs_matrix), np.max(self.obs_matrix), 
             shape=(self.dO,), dtype=np.float32)
 
