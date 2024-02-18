@@ -68,6 +68,5 @@ setup(
         "termcolor",  # adept_envs dependency
         "click",  # adept_envs dependency
         "dm_control>=1.0.3",
-        "mjrl @ git+https://github.com/aravindr93/mjrl@master#egg=mjrl",
     ],
 )

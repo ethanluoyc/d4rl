@@ -1,7 +1,7 @@
 import numpy as np
 from gym import utils
 from gym import spaces
-from mjrl.envs import mujoco_env
+from d4rl.hand_manipulation_suite import mujoco_env
 from d4rl.utils.quatmath import quat2euler, euler2quat
 from d4rl import offline_env
 from mujoco_py import MjViewer
