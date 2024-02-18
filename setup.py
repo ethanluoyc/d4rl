@@ -1,7 +1,5 @@
-"""Setups up the PettingZoo module."""
-
-from setuptools import find_packages, setup
-
+"""Setups up the D4RL module."""
+from setuptools import setup
 
 def get_description():
     """Gets the description from the readme."""
@@ -34,39 +32,7 @@ version = get_version()
 header_count, long_description = get_description()
 
 setup(
-    name="D4RL",
     version=version,
-    author="Farama Foundation",
-    author_email="contact@farama.org",
-    description="Datasets for Data Driven Deep Reinforcement Learning.",
-    url="https://github.com/Farama-Foundation/D4RL",
-    license="Apache",
-    license_files=("LICENSE",),
     long_description=long_description,
     long_description_content_type="text/markdown",
-    keywords=["Reinforcement Learning", "Datasets", "RL", "AI"],
-    python_requires=">=3.7, <3.11",
-    packages=find_packages(),
-    include_package_data=True,
-    package_data={
-        "d4rl": [
-            "locomotion/assets/*",
-            "hand_manipulation_suite/assets/*",
-            "hand_manipulation_suite/Adroit/*",
-            "hand_manipulation_suite/Adroit/gallery/*",
-            "hand_manipulation_suite/Adroit/resources/*",
-            "hand_manipulation_suite/Adroit/resources/meshes/*",
-            "hand_manipulation_suite/Adroit/resources/textures/*",
-        ]
-    },
-    install_requires=[
-        "gym<0.24.0",
-        "numpy",
-        "mujoco_py",
-        "Cython<3",
-        "h5py",
-        "termcolor",  # adept_envs dependency
-        "click",  # adept_envs dependency
-        "dm_control>=1.0.3",
-    ],
 )
