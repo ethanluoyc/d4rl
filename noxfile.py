@@ -4,6 +4,6 @@ mujoco_py_dep = "https://github.com/ethanluoyc/mujoco-py/releases/download/v2.1.
 
 @nox.session(python=["3.10"])
 def tests(session):
-    session.install(".", "pytest", mujoco_py_dep)
+    session.install(".[all]", "pytest", mujoco_py_dep)
     with session.chdir("tests"):
         session.run("python", "-m",  "pytest", "--capture=no")

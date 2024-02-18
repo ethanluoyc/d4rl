@@ -8,24 +8,30 @@ build-backend = "setuptools.build_meta"
 name = "D4RL"
 description = "Datasets for Data Driven Deep Reinforcement Learning."
 readme = "README.md"
-requires-python = ">= 3.7, <3.11"
+requires-python = ">= 3.7"
 authors = [{ name = "Farama Foundation", email = "contact@farama.org" }]
 license = { file = "LICENSE" }
 keywords = ["Reinforcement Learning", "Datasets", "RL", "AI"]
-dependencies = [
-    "gym<0.24.0",
-    "numpy",
-    "mujoco_py",
-    "Cython<3",
-    "h5py",
-    "termcolor",  # adept_envs dependency
-    "click",  # adept_envs dependency
-    "dm_control>=1.0.3",
-]
-dynamic = ["version"]
+dependencies = ["gym<0.24.0", "numpy", "h5py"]
+version = "1.1"
 
 
 [project.optional-dependencies]
+mujoco-py = ["mujoco-py >=2.1,<2.2", "cython<3"]
+kitchen = [
+    "termcolor",         # adept_envs dependency
+    "click",             # adept_envs dependency
+    "dm_control>=1.0.3",
+]
+all = [
+    # mujoco-py
+    "mujoco-py >=2.1,<2.2",
+    "cython<3",
+    # kitchen
+    "termcolor",         # adept_envs dependency
+    "click",             # adept_envs dependency
+    "dm_control>=1.0.3",
+]
 
 [project.urls]
 Repository = "https://github.com/Farama-Foundation/D4RL"
